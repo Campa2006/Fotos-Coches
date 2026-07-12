@@ -56,21 +56,15 @@ encargo). Todo el contenido de este build se ha extraído de esos dos archivos:
   qué Campalans"): tal y como los pedía el encargo original, no los de la
   maqueta.
 
-## Pendiente — datos de contacto
+## Datos de contacto
 
-**No hay ningún email ni teléfono/WhatsApp real disponible en ningún material
-recibido** (ni en la maqueta ni en ningún otro archivo). Por integridad no se
-ha inventado un contacto ficticio: en la sección de contacto y en el pie de
-página aparece literalmente "(pendiente de confirmar con Campalans)" en el
-lugar del email y el teléfono. Es el único texto no definitivo que queda en
-el sitio. En cuanto el cliente facilite el email y el teléfono/WhatsApp
-reales, sustituir:
+Email y teléfono/WhatsApp oficiales, confirmados por el cliente:
 
-- En `index.html`, dentro de `<ul class="contact-details">`: cambiar los dos
-  `<em>(pendiente de confirmar con Campalans)</em>` por enlaces reales, por
-  ejemplo `<a href="mailto:correo@dominio.com">correo@dominio.com</a>` y
-  `<a href="tel:+34...">+34 ...</a>`.
-- En el `<footer>`, dentro de `.site-footer__contact`: mismo cambio.
+- Email: `homologaciones@gestoriacampalans.com`
+- Teléfono / WhatsApp: `931 27 99 03`
+
+Aparecen como enlaces `mailto:` y `tel:` en la sección de contacto y en el
+pie de página. Ya no queda ningún dato de contacto pendiente.
 
 ## Logo e imágenes — procedencia real
 
@@ -149,14 +143,12 @@ valor de `CONTACT_FORM_ENDPOINT` por su URL.
 
 ## Pendiente antes de publicar
 
-1. Confirmar el email y el teléfono/WhatsApp reales (único contenido no
-   definitivo que queda en el sitio) y sustituirlos en `index.html`.
-2. Configurar `CONTACT_FORM_ENDPOINT` en `script.js` para el envío real de
+1. Configurar `CONTACT_FORM_ENDPOINT` en `script.js` para el envío real de
    correos.
-3. Redactar y enlazar los textos legales de "Aviso legal" y "Política de
+2. Redactar y enlazar los textos legales de "Aviso legal" y "Política de
    privacidad" (no se ha recibido ningún texto legal).
-4. Si aparecen las fotografías originales a resolución completa, sustituir
+3. Si aparecen las fotografías originales a resolución completa, sustituir
    los recortes de `assets/` para mejorar la nitidez en pantallas grandes.
-5. Revisar y, si el cliente lo desea, ampliar los párrafos de apoyo
+4. Revisar y, si el cliente lo desea, ampliar los párrafos de apoyo
    redactados por no ser legibles en la maqueta original (ver sección
    "Procedencia del contenido" arriba).

@@ -649,9 +649,13 @@ p {
   color: var(--color-cyan);
 }
 
-.contact-details em {
-  font-style: normal;
+.contact-details a {
   color: var(--color-white-a70);
+}
+
+.contact-details a:hover {
+  color: var(--color-white);
+  text-decoration: underline;
 }
 
 .contact-form {
