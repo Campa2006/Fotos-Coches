@@ -6,16 +6,29 @@ JavaScript vanilla, sin frameworks ni dependencias de build.
 
 ## Archivos del proyecto
 
-- `index.html` — estructura y contenido de la página.
-- `styles.css` — estilos, paleta de color y sistema responsive.
-- `script.js` — menú móvil, validación del formulario de contacto y año del copyright.
-- `assets/` — logo oficial y fotografías reales (ver procedencia más abajo).
+Todo el sitio publicable vive dentro de `/docs`, que es la carpeta que
+GitHub Pages requiere para publicar desde la rama principal:
+
+- `docs/index.html` — estructura y contenido de la página.
+- `docs/styles.css` — estilos, paleta de color y sistema responsive.
+- `docs/script.js` — menú móvil, validación del formulario de contacto y año del copyright.
+- `docs/assets/` — logo oficial y fotografías reales (ver procedencia más abajo).
 - `README.md` — este documento.
+
+Todas las rutas dentro de `docs/index.html` son relativas (`styles.css`,
+`script.js`, `assets/...`), así que el sitio funciona igual sirviéndolo desde
+la raíz del repositorio o desde `/docs`, sin necesidad de tocar ninguna ruta.
+
+## Publicar con GitHub Pages
+
+En la configuración del repositorio (Settings → Pages), selecciona la rama
+correspondiente y la carpeta **`/docs`** como origen. GitHub Pages servirá
+`docs/index.html` como página principal.
 
 ## Cómo ejecutar el sitio en local
 
 ```bash
-cd Fotos-Coches
+cd Fotos-Coches/docs
 python3 -m http.server 8000
 ```
 
@@ -73,17 +86,17 @@ se han extraído directamente de los archivos originales que el cliente
 adjuntó en la conversación (el logotipo oficial en alta resolución, y la
 maqueta de diseño, que incluye fotografías reales incrustadas).
 
-- `assets/logo-campalans.png` — logotipo oficial completo, usado tal cual,
+- `docs/assets/logo-campalans.png` — logotipo oficial completo, usado tal cual,
   sin recolorear, recortar ni aplicar efectos. En el pie de página (fondo
   oscuro) se apoya sobre una placa blanca (`.site-footer__brand`) para que
   se lea correctamente, sin modificar el archivo del logo en sí.
-- `assets/favicon-campalans.png` — recorte cuadrado del icono "C" del propio
+- `docs/assets/favicon-campalans.png` — recorte cuadrado del icono "C" del propio
   logo oficial (mismo archivo, sin redibujar).
-- `assets/hero-vehiculo-importado.jpg` — recorte del vehículo y la gráfica de
+- `docs/assets/hero-vehiculo-importado.jpg` — recorte del vehículo y la gráfica de
   matrícula/importación que aparece en el hero de la maqueta.
-- `assets/transporte-vehiculos.jpg` — fotografía de vehículos sobre un
+- `docs/assets/transporte-vehiculos.jpg` — fotografía de vehículos sobre un
   camión de transporte, tomada de la banda de imagen de la maqueta.
-- `assets/conduccion-campalans.jpg` — fotografía de un conductor al volante,
+- `docs/assets/conduccion-campalans.jpg` — fotografía de un conductor al volante,
   tomada de la sección final de contacto de la maqueta.
 
 **Aviso de calidad de imagen**: estas fotografías proceden de una maqueta de
@@ -98,7 +111,7 @@ recortes para una calidad óptima en pantallas grandes.
 
 Variante usada: **fila superior, recuadro central** de la maqueta de
 referencia, confirmada por el cliente. Variables CSS en `:root`
-(`styles.css`):
+(`docs/styles.css`):
 
 | Variable | Valor | Uso |
 |---|---|---|
@@ -116,12 +129,12 @@ Montserrat, cargada desde Google Fonts (pesos 400, 500, 600 y 700).
 
 ## Formulario de contacto — configuración del envío de correo
 
-El formulario (`#contactForm` en `index.html`, gestionado en `script.js`)
+El formulario (`#contactForm` en `docs/index.html`, gestionado en `docs/script.js`)
 valida en el cliente: campos obligatorios, formato de email, formato de
 teléfono y aceptación obligatoria de la política de privacidad, con mensajes
 de error accesibles (`role="alert"`).
 
-**El envío de correo real todavía no está conectado.** En `script.js`:
+**El envío de correo real todavía no está conectado.** En `docs/script.js`:
 
 ```js
 var CONTACT_FORM_ENDPOINT = '';
@@ -143,12 +156,12 @@ valor de `CONTACT_FORM_ENDPOINT` por su URL.
 
 ## Pendiente antes de publicar
 
-1. Configurar `CONTACT_FORM_ENDPOINT` en `script.js` para el envío real de
+1. Configurar `CONTACT_FORM_ENDPOINT` en `docs/script.js` para el envío real de
    correos.
 2. Redactar y enlazar los textos legales de "Aviso legal" y "Política de
    privacidad" (no se ha recibido ningún texto legal).
 3. Si aparecen las fotografías originales a resolución completa, sustituir
-   los recortes de `assets/` para mejorar la nitidez en pantallas grandes.
+   los recortes de `docs/assets/` para mejorar la nitidez en pantallas grandes.
 4. Revisar y, si el cliente lo desea, ampliar los párrafos de apoyo
    redactados por no ser legibles en la maqueta original (ver sección
    "Procedencia del contenido" arriba).
