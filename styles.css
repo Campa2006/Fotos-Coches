@@ -316,36 +316,6 @@ p {
 }
 
 /* -------------------------------------------------------------------------
-   Placeholder media blocks
-   ------------------------------------------------------------------------- */
-
-.placeholder-block {
-  background: repeating-linear-gradient(
-    135deg,
-    var(--color-navy-800),
-    var(--color-navy-800) 18px,
-    var(--color-navy-900) 18px,
-    var(--color-navy-900) 36px
-  );
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  text-align: right;
-  color: var(--color-white-a70);
-  padding: var(--space-2);
-}
-
-.placeholder-block__label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  padding: var(--space-2) var(--space-3);
-  background-color: var(--color-navy-900-a70);
-  border: 1px dashed var(--color-cyan);
-  border-radius: var(--radius);
-}
-
-/* -------------------------------------------------------------------------
    Hero
    ------------------------------------------------------------------------- */
 
@@ -361,6 +331,10 @@ p {
 .hero__media {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
 }
 
 .hero__overlay {
@@ -488,41 +462,14 @@ p {
   margin: 0;
 }
 
-.phases-note {
-  margin-top: var(--space-4);
-  padding: var(--space-2) var(--space-3);
-  border: 1px dashed var(--color-cyan);
-  border-radius: var(--radius);
-  font-size: 0.85rem;
-  color: var(--color-white-a70);
-  max-width: 760px;
-  margin-inline: auto;
-}
-
 /* -------------------------------------------------------------------------
-   Services / Reasons
+   Reasons
    ------------------------------------------------------------------------- */
 
-.services-grid,
 .reasons-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--space-3);
-}
-
-.service-card {
-  padding: var(--space-3);
-  border: 1px solid var(--color-navy-800-a40);
-  border-radius: var(--radius);
-}
-
-.service-card h3 {
-  font-size: 1.05rem;
-}
-
-.service-card p {
-  color: var(--color-grey-700);
-  margin: 0;
 }
 
 .reason-card {
@@ -568,6 +515,9 @@ p {
 }
 
 .mini-card {
+  display: flex;
+  align-items: center;
+  min-height: 90px;
   padding: var(--space-3);
   border: 1px solid var(--color-navy-800-a40);
   border-radius: var(--radius);
@@ -576,11 +526,6 @@ p {
 .mini-card h3 {
   font-size: 0.95rem;
   color: var(--color-navy-800);
-}
-
-.mini-card p {
-  font-size: 0.85rem;
-  color: var(--color-grey-700);
   margin: 0;
 }
 
@@ -654,21 +599,25 @@ p {
 }
 
 .origen__media {
+  display: block;
   height: 260px;
   width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* -------------------------------------------------------------------------
    Contacto
    ------------------------------------------------------------------------- */
 
-.contact-section {
-  position: relative;
-  padding-block: 0;
-}
-
 .contact-section__media {
+  display: block;
   height: 220px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  border-radius: var(--radius);
+  margin-bottom: var(--space-3);
 }
 
 .contact-grid {
@@ -698,6 +647,11 @@ p {
 .contact-details span {
   font-weight: 600;
   color: var(--color-cyan);
+}
+
+.contact-details em {
+  font-style: normal;
+  color: var(--color-white-a70);
 }
 
 .contact-form {
@@ -821,6 +775,13 @@ p {
   gap: var(--space-4);
   padding-bottom: var(--space-4);
   border-bottom: 1px solid var(--color-white-a08);
+}
+
+.site-footer__brand {
+  display: inline-flex;
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  padding: var(--space-1) var(--space-2);
 }
 
 .site-footer__brand img {
