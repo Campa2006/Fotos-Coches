@@ -15,7 +15,6 @@
   document.addEventListener('DOMContentLoaded', function () {
     initMobileNav();
     initContactForm();
-    initCopyrightYear();
   });
 
   function initMobileNav() {
@@ -39,13 +38,6 @@
     });
   }
 
-  function initCopyrightYear() {
-    var el = document.getElementById('copyYear');
-    if (el) {
-      el.textContent = new Date().getFullYear();
-    }
-  }
-
   function initContactForm() {
     var form = document.getElementById('contactForm');
     if (!form) {
@@ -65,12 +57,6 @@
       telefono: function (value) {
         var pattern = /^[0-9+\s()-]{6,}$/;
         return pattern.test(value.trim()) ? '' : 'Introduce un teléfono válido.';
-      },
-      pais: function (value) {
-        return value.trim().length >= 2 ? '' : 'Indica el país de procedencia del vehículo.';
-      },
-      'marca-modelo': function (value) {
-        return value.trim().length >= 2 ? '' : 'Indica la marca y el modelo del vehículo.';
       },
       mensaje: function (value) {
         return value.trim().length >= 10 ? '' : 'Cuéntanos brevemente qué necesitas (mínimo 10 caracteres).';
