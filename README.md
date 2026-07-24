@@ -1,13 +1,15 @@
 # Homologaciones Campalans — Sitio web corporativo
 
-Sitio web informativo para Homologaciones Campalans (importación, homologación y
-matriculación de vehículos). Construido con HTML5 semántico, CSS moderno y
+Sitio web informativo para Homologaciones Campalans (importación, transporte,
+aduanas, homologación y matriculación de vehículos, con especialización en
+importación desde Dubai). Construido con HTML5 semántico, CSS moderno y
 JavaScript vanilla, sin frameworks ni dependencias de build.
 
-El diseño reproduce con fidelidad tres capturas de referencia facilitadas por
-el cliente (cabecera + hero + fases · consultoría + experiencia + origen ·
-bloque final de contacto), con el logotipo oficial sustituyendo al logo que
-aparecía en esas capturas.
+El diseño y el contenido reproducen fielmente el sitio de referencia
+facilitado por el cliente (una copia offline completa del sitio real en
+`desarrollo.rankingonline.com/campalans`, construido en WordPress/Elementor),
+manteniendo el nombre de marca **Homologaciones Campalans** con el icono "C"
+del logotipo oficial.
 
 ## Archivos del proyecto
 
@@ -16,8 +18,10 @@ GitHub Pages requiere para publicar desde la rama principal:
 
 - `docs/index.html` — estructura y contenido de la página.
 - `docs/styles.css` — estilos, paleta de color y sistema responsive.
-- `docs/script.js` — menú móvil y validación del formulario de contacto.
-- `docs/assets/` — logo oficial y fotografías reales (ver procedencia más abajo).
+- `docs/script.js` — menú móvil, efecto hover de las 6 fases y validación
+  del formulario de contacto.
+- `docs/assets/` — logotipo (icono recortado) y fotografías reales del
+  sitio de referencia (ver procedencia más abajo).
 - `README.md` — este documento.
 
 Todas las rutas dentro de `docs/index.html` son relativas (`styles.css`,
@@ -33,7 +37,7 @@ correspondiente y la carpeta **`/docs`** como origen. GitHub Pages servirá
 ## Cómo ejecutar el sitio en local
 
 ```bash
-cd Fotos-Coches/docs
+cd docs
 python3 -m http.server 8000
 ```
 
@@ -41,59 +45,46 @@ Y abrir `http://localhost:8000` en el navegador.
 
 ## Estructura de la página
 
-Únicamente las secciones que aparecen en las capturas de referencia, en este
-orden, sin footer corporativo ni secciones adicionales:
-
-1. Cabecera (logo + navegación + botón "Contacto").
-2. Hero principal (titular, texto, CTA, vehículo a la derecha).
+1. Cabecera (logo + navegación + botón "Contacto"), superpuesta y
+   transparente sobre el hero.
+2. Hero principal (titular, texto, CTA "Quiero importar mi coche").
 3. "Así traemos tu coche a España".
-4. Las 6 fases del servicio, en una fila con separadores verticales.
-5. Consultoría 1 a 1 (texto + 4 tarjetas).
-6. Bloque de experiencia (gráfico en C + texto).
+4. Las 6 fases del servicio, en una fila con efecto interactivo al pasar
+   el ratón (se expande la columna activa; solo en escritorio).
+5. Consultoría 1 a 1 (texto + 4 tarjetas con icono).
+6. Bloque "Por qué Campalans" / experiencia (gráfico en C + texto,
+   +10 años de experiencia).
 7. "También traemos coches de USA, Canadá y Europa".
-8. Fotografía horizontal de transporte de vehículos, a todo el ancho.
-9. Bloque final: fotografía + formulario de contacto.
-
-## Procedencia del contenido
-
-Los textos de todas las secciones (titulares, párrafos, las 6 fases, los 4
-puntos de la consultoría, los textos de experiencia y origen, y los campos
-del formulario) están tomados literalmente de las tres capturas de
-referencia que el cliente adjuntó para este rediseño, que sí eran legibles a
-resolución completa. No se ha inventado ni reinterpretado ningún contenido.
+8. Banda fotográfica horizontal de transporte de vehículos, a todo el ancho.
+9. Bloque final de contacto: fotografía + formulario.
+10. Pie de página con logo, descripción, navegación y datos de contacto.
 
 ## Datos de contacto
 
-Email y teléfono/WhatsApp oficiales, confirmados por el cliente, enlazados
-como `mailto:` y `tel:` bajo el formulario de contacto:
+Dirección, teléfono/WhatsApp y email oficiales, enlazados como `tel:` y
+`mailto:` en el pie de página y bajo el formulario de contacto:
 
-- Email: `homologaciones@gestoriacampalans.com`
-- Teléfono / WhatsApp: `931 27 99 03`
+- Dirección: `Calle Mallorca nº 214, 5º 1ª, 08008 Barcelona`
+- Teléfono / WhatsApp: `+34 93 668 11 58`
+- Email: `gestoria@gestoriacampalans.com`
 
 ## Logo e imágenes — procedencia real
 
-- `docs/assets/logo-campalans.png` — logotipo oficial completo, usado tal
-  cual, sin recolorear, recortar ni aplicar efectos. Sobre fondo oscuro
-  (cabecera) se apoya sobre una placa blanca (`.site-header__logo`) para que
-  se lea correctamente, sin modificar el archivo del logo en sí.
-- `docs/assets/favicon-campalans.png` — recorte cuadrado del icono "C" del
-  propio logo oficial (mismo archivo, sin redibujar).
-- `docs/assets/hero-vehiculo-importado.jpg` — vehículo y gráfica de
-  matrícula/importación del hero.
-- `docs/assets/transporte-vehiculos.jpg` — fotografía de vehículos sobre un
-  camión de transporte.
-- `docs/assets/conduccion-campalans.jpg` — fotografía de un conductor al
-  volante, usada en escala de grises (`filter: grayscale(1)`) en el bloque
-  final de contacto.
-- `docs/assets/experiencia-grafico-c.jpg` — elemento gráfico en forma de "C"
-  del bloque de experiencia, recortado de la captura de referencia.
-
-**Aviso de calidad de imagen**: estas fotografías proceden de capturas y
-maquetas de diseño, no de archivos fotográficos originales a resolución
-completa. Se han recortado y escalado lo mejor posible, pero su resolución
-nativa es limitada. Si el cliente dispone en algún momento de las
-fotografías originales a resolución completa, deben sustituir a estos
-recortes para una calidad óptima en pantallas grandes.
+- `docs/assets/logo-icono-c.png` — icono "C" recortado del logotipo oficial
+  del sitio de referencia (sin recolorear ni redibujar). El wordmark
+  "Homologaciones Campalans" se renderiza como texto HTML junto al icono
+  (no como imagen), para que sea nítido a cualquier resolución y refleje el
+  nombre de marca correcto.
+- `docs/assets/favicon-campalans.png` — el mismo icono "C" compuesto sobre
+  un fondo navy cuadrado, para uso como favicon.
+- `docs/assets/hero-banner.webp` — fondo del hero (vehículo y gráfica de
+  matrícula/importación), tomado tal cual del sitio de referencia.
+- `docs/assets/experiencia-grafico-c.png` — elemento gráfico en forma de
+  "C" del bloque de experiencia.
+- `docs/assets/transporte-vehiculos.webp` — fotografía de vehículos sobre
+  un camión de transporte, banda horizontal a todo el ancho.
+- `docs/assets/interior-lujo.webp` — fotografía de interior de vehículo,
+  usada en el bloque final de contacto.
 
 ## Paleta de color
 
@@ -101,26 +92,30 @@ Variables CSS en `:root` (`docs/styles.css`):
 
 | Variable | Valor | Uso |
 |---|---|---|
-| `--color-navy-900` | `#001622` | Navy principal (cabecera, hero, fases) |
-| `--color-navy-800` | `#032A3F` | Navy secundaria (bordes, detalles) |
-| `--color-grey-700` | `#35414F` | Gris azulado (consultoría, panel de contacto) |
-| `--color-cyan` | `#00DDFF` | Acento (botones, números de fase) |
+| `--color-navy` | `#032A3F` | Navy principal (cabecera, hero, fases, contacto, footer) |
+| `--color-navy-light` | `#053C5A` | Navy secundaria (tarjeta de marca del footer, barra inferior) |
+| `--color-secondary` | `#F3FAFF` | Fondo casi blanco (tarjetas de consultoría, bloque de experiencia) |
 | `--color-white` | `#FFFFFF` | Blanco |
-
-El fondo muy claro del bloque de experiencia es una variación de opacidad de
-`--color-navy-800` (`--color-navy-800-a04`), no un color nuevo. No se ha
-usado ningún color fuera de esta paleta.
+| `--color-accent` | `#CDFF6F` | Verde lima — acento (botones, números de fase, hover) |
+| `--color-accent-hover` | `#ABD55D` | Verde lima oscurecido (hover del botón de envío) |
+| `--color-accent-text` | `#4E5E00` | Texto oliva oscuro sobre fondos verde lima |
+| `--color-body-muted` | `#697988` | Texto de párrafo secundario |
+| `--color-border` | `#B3D0EA` | Bordes de las tarjetas de fases |
+| `--color-label` | `#828282` | Etiquetas y campos del formulario |
+| `--color-icon` | `#5DA0C4` | Icono de las tarjetas de consultoría |
 
 ## Tipografía
 
-Montserrat, cargada desde Google Fonts (pesos 400, 500, 600 y 700).
+Montserrat (títulos, botones, navegación) e Inter (campos del formulario),
+cargadas desde Google Fonts.
 
 ## Formulario de contacto — configuración del envío de correo
 
 El formulario (`#contactForm` en `docs/index.html`, gestionado en
-`docs/script.js`) tiene los campos Nombre, Correo electrónico, Número de
-teléfono, Mensaje y la casilla de aceptación del aviso legal, con validación
-en el cliente y mensajes de error accesibles (`role="alert"`).
+`docs/script.js`) tiene los campos Nombre (opcional), Correo electrónico,
+Número de teléfono, Mensaje y la casilla de aceptación del aviso legal
+(obligatorios), con validación en el cliente y mensajes de error accesibles
+(`role="alert"`).
 
 **El envío de correo real todavía no está conectado.** En `docs/script.js`:
 
@@ -140,14 +135,12 @@ valor de `CONTACT_FORM_ENDPOINT` por su URL.
 - Estados de foco visibles (`:focus-visible`) con el color de acento.
 - `prefers-reduced-motion` respetado.
 - Formulario con etiquetas asociadas y errores anunciados con `role="alert"`.
-- Sin carruseles, sin chatbots, sin animaciones innecesarias, sin emojis.
+- Menú móvil con `aria-expanded` y cierre automático al navegar.
 
 ## Pendiente antes de publicar
 
 1. Configurar `CONTACT_FORM_ENDPOINT` en `docs/script.js` para el envío real
    de correos.
 2. Redactar y enlazar un texto legal real para el enlace "aviso legal" del
-   formulario (no se ha recibido ningún texto legal).
-3. Si aparecen las fotografías originales a resolución completa, sustituir
-   los recortes de `docs/assets/` para mejorar la nitidez en pantallas
-   grandes.
+   formulario y los enlaces de Aviso Legal / Privacidad / Cookies del pie
+   de página (por ahora son anclas `#` de marcador de posición).
