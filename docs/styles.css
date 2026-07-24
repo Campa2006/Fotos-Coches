@@ -827,12 +827,36 @@ svg {
 }
 
 .contact__photo {
+	position: relative;
 	flex: 1 1 50%;
-	background-image: linear-gradient(0deg, rgba(3, 42, 63, 0.55), rgba(3, 42, 63, 0.55)),
-		url("assets/interior-lujo.webp");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	overflow: hidden;
+	background-color: var(--color-navy);
+}
+
+.contact__video {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: saturate(0.8) brightness(0.82) contrast(1.05);
+}
+
+.contact__video-overlay {
+	position: absolute;
+	inset: 0;
+	background: var(--color-navy);
+	opacity: 0.55;
+	mix-blend-mode: color;
+	pointer-events: none;
+}
+
+.contact__photo::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(200deg, rgba(3, 42, 63, 0.15) 0%, rgba(3, 42, 63, 0.5) 100%);
+	pointer-events: none;
 }
 
 .contact__form-panel {

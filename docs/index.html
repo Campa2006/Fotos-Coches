@@ -166,7 +166,21 @@
 	<div class="photo-band" role="img" aria-label="Vehículos siendo transportados en un camión especializado"></div>
 
 	<section class="contact" id="contacto">
-		<div class="contact__photo" role="img" aria-label="Cliente revisando el interior de un vehículo de importación"></div>
+		<div class="contact__photo">
+			<video
+				class="contact__video"
+				autoplay
+				muted
+				loop
+				playsinline
+				preload="metadata"
+				poster="assets/interior-lujo.webp"
+				aria-hidden="true"
+			>
+				<source src="assets/videos/contacto-campalans.mp4" type="video/mp4">
+			</video>
+			<div class="contact__video-overlay" aria-hidden="true"></div>
+		</div>
 		<div class="contact__form-panel">
 			<h2>El coche que sueñas te está esperando</h2>
 			<p>Cuéntanos qué coche quieres importar y desde dónde. Te guiaremos en cada fase hasta que lo tengas en tus manos.</p>
