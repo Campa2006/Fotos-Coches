@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analizador de Albaranes · Gestoría Campalans</title>
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <h1>Analizador de Albaranes — Gestoría Campalans</h1>
+</header>
+
+<main>
+  <section class="panel" id="upload-panel">
+    <div id="dropzone" class="dropzone">
+      <p><strong>Arrastra aquí uno o varios albaranes PDF</strong></p>
+      <p>o</p>
+      <button id="btn-elegir" type="button">Elegir archivos</button>
+      <input type="file" id="file-input" accept="application/pdf" multiple hidden>
+    </div>
+    <div id="upload-resultados" class="upload-resultados"></div>
+  </section>
+
+  <section class="panel filtros">
+    <label>
+      Mes:
+      <select id="filtro-mes">
+        <option value="">Todos</option>
+        <option value="1">Enero</option>
+        <option value="2">Febrero</option>
+        <option value="3">Marzo</option>
+        <option value="4">Abril</option>
+        <option value="5">Mayo</option>
+        <option value="6">Junio</option>
+        <option value="7">Julio</option>
+        <option value="8">Agosto</option>
+        <option value="9">Septiembre</option>
+        <option value="10">Octubre</option>
+        <option value="11">Noviembre</option>
+        <option value="12">Diciembre</option>
+      </select>
+    </label>
+    <label>
+      Año:
+      <select id="filtro-anio">
+        <option value="">Todos</option>
+      </select>
+    </label>
+    <div class="total-general">
+      Total honorarios del periodo:
+      <span id="total-general">0,00 €</span>
+      <small id="num-albaranes-periodo"></small>
+    </div>
+  </section>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="clientes">Clientes</button>
+    <button class="tab-btn" data-tab="tramites">Trámites</button>
+    <button class="tab-btn" data-tab="albaranes">Albaranes importados</button>
+  </nav>
+
+  <section id="tab-clientes" class="tab-content active">
+    <table>
+      <thead>
+        <tr><th>#</th><th>Cliente</th><th>NIF</th><th>Nº albaranes</th><th>Total honorarios</th></tr>
+      </thead>
+      <tbody id="tabla-clientes"></tbody>
+    </table>
+  </section>
+
+  <section id="tab-tramites" class="tab-content">
+    <table>
+      <thead>
+        <tr><th>#</th><th>Trámite</th><th>Veces realizado</th><th>Total honorarios</th></tr>
+      </thead>
+      <tbody id="tabla-tramites"></tbody>
+    </table>
+  </section>
+
+  <section id="tab-albaranes" class="tab-content">
+    <div class="filtros-albaranes">
+      <label>
+        Estado:
+        <select id="filtro-estado">
+          <option value="">Todos</option>
+          <option value="importado">Importado correctamente</option>
+          <option value="duplicado">Duplicado</option>
+          <option value="revision">Necesita revisión</option>
+          <option value="error">Error de lectura</option>
+        </select>
+      </label>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Número</th><th>Fecha</th><th>Cliente</th><th>Trámite(s)</th>
+          <th>Honorarios</th><th>Estado</th><th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-albaranes"></tbody>
+    </table>
+  </section>
+</main>
+
+<div id="modal-backdrop" class="modal-backdrop hidden">
+  <div class="modal" id="modal">
+  </div>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
